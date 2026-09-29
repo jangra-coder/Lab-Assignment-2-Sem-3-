@@ -3,7 +3,8 @@ const logger = require("./middleware/logger");
 const studentRoutes = require("./routes/studentRoutes");
 
 const app = express();
-const PORT = 3000;
+// Hosting sites give their own port number, otherwise use 3000 on local system
+const PORT = process.env.PORT || 3000;
 
 // Middleware to read JSON data from request body
 app.use(express.json());
